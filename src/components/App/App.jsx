@@ -1,9 +1,14 @@
 import React from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 import './App.css';
 import {useState, useEFfect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import FeedbackFeel from '../FeedbackFeel/FeedbackFeel';
+import FeedbackUnderstand from '../FeedbackUnderstand/FeedbackUnderstand';
+import FeedbackSupport from '../FeedbackSupport/FeedbackSupport';
+import FeedbackComment from '../FeedbackComment/FeedbackComment';
+import FeedbackReview from '../FeedbackReview/FeedbackReview'
 
 function App() {
 
@@ -14,25 +19,29 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
 
-      {/* <Route path ='/1'>      
-        <FeedbackFeel />
-      </Route>
+      <Router>
 
-      <Route path ='/2'>
-        <FeedbackUnderstand />
-      </Route>
+        <Route exact path ='/'>      
+          <FeedbackFeel />
+        </Route>
+  
+        <Route path ='/2'>
+          <FeedbackUnderstand />
+        </Route>
 
-      <Route path ='/3'>
-        <FeedbackSupport />
-      </Route>
+        <Route path ='/3'>
+          <FeedbackSupport />
+        </Route>
 
-      <Route path ='/4'>
-        <FeedbackComment />
-      </Route>
+        <Route path ='/4'>
+          <FeedbackComment />
+        </Route>
 
-      <Route path ='/5'>
-        <FeedbackReview />
-      </Route> */}
+        <Route path ='/5'>
+          <FeedbackReview />
+        </Route>
+
+      </Router>
 
     </div>
   );
