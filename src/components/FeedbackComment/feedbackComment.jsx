@@ -13,7 +13,11 @@ function FeedbackComment() {
         <div>
             <h2>Any comments you want to leave?</h2>
 
-            <button onClick={handleNext} >NEXT</button>
+            <form>
+                <input type='number' placeholder='Comments' />
+                <button onClick={handleNext}>NEXT</button>
+            </form>
+
         </div>
     )
 }

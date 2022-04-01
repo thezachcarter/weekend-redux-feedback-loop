@@ -13,7 +13,11 @@ function FeedbackSupport() {
         <div>
             <h2>How well are you being supported?</h2>
 
-            <button onClick={handleNext} >NEXT</button>
+            <form>
+                <input type='text' placeholder='Support?' />
+                <button onClick={handleNext}>NEXT</button>
+            </form>
+
         </div>
     )
 }

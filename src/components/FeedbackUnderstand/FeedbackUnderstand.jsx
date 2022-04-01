@@ -13,7 +13,11 @@ function FeedbackUnderstand() {
         <div>
             <h2>How well are you understanding the content?</h2>
 
-            <button onClick={handleNext} >NEXT</button>
+            <form>
+                <input type='number' placeholder='Understand?' />
+                <button onClick={handleNext}>NEXT</button>
+            </form>
+
         </div>
     )
 }

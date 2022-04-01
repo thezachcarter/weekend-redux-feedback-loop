@@ -13,7 +13,11 @@ function FeedbackFeel() {
         <div>
             <h2>How are you feeling today?</h2>
 
-            <button onClick={handleNext}>NEXT</button>
+            <form>
+                <input type='number' placeholder='Feeling?' />
+                <button onClick={handleNext}>NEXT</button>
+            </form>
+
         </div>
     )
 }
