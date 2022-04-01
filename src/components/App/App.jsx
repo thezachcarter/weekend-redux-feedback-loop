@@ -14,7 +14,25 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
 
-      
+      {/* <Route path ='/1'>      
+        <FeedbackFeel />
+      </Route>
+
+      <Route path ='/2'>
+        <FeedbackUnderstand />
+      </Route>
+
+      <Route path ='/3'>
+        <FeedbackSupport />
+      </Route>
+
+      <Route path ='/4'>
+        <FeedbackComment />
+      </Route>
+
+      <Route path ='/5'>
+        <FeedbackReview />
+      </Route> */}
 
     </div>
   );
