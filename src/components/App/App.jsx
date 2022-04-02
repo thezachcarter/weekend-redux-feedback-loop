@@ -7,7 +7,7 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import FeedbackFeel from '../FeedbackFeel/FeedbackFeel';
 import FeedbackUnderstand from '../FeedbackUnderstand/FeedbackUnderstand';
 import FeedbackSupport from '../FeedbackSupport/FeedbackSupport';
-import FeedbackComment from '../FeedbackComment/FeedbackComment';
+import FeedbackComments from '../FeedbackComments/FeedbackComments';
 import FeedbackReview from '../FeedbackReview/FeedbackReview'
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
         </Route>
 
         <Route path ='/4'>
-          <FeedbackComment />
+          <FeedbackComments />
         </Route>
 
         <Route path ='/5'>

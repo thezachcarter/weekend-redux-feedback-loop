@@ -2,30 +2,30 @@ import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory  } from 'react-router-dom';
 
-function FeedbackSupport() {
+function FeedbackComments() {
     const dispatch = useDispatch();
     const history = useHistory();
-    let [support, setSupport] = useState(0);
+    let [comment, setComment] = useState(0);
 
-    const handleSupport = (event) => {
+    const handleComments = (event) => {
         event.preventDefault();
-        console.log('in handle support', event.target.value);
-        setSupport(event.target.value);
+        console.log('in handle comments', event.target.value);
+        setComments(event.target.value);
     }
 
     const handleNext = (event) => {
         event.preventDefault();
-        console.log('submit support');     
-        dispatch({type: 'ADD_SUPPORT', payload: support})
-        history.push('/4');
+        console.log('submit comment');     
+        dispatch({type: 'ADD_COMMENTS', payload: comment})
+        history.push('/5');
     }
 
     return (
         <div>
-            <h2>How well are you being supported?</h2>
+            <h2>Any comments you want to leave?</h2>
 
             <form onSubmit={(event) => handleNext(event)}>
-                <input type='text' placeholder='Support?' onChange={handleSupport}/>
+                <input type='text' placeholder='Comments' onChange={handleComments}/>
                 <button>NEXT</button>
             </form>
 
@@ -33,4 +33,4 @@ function FeedbackSupport() {
     )
 }
 
-export default FeedbackSupport;
+export default FeedbackComments;

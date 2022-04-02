@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 function FeedbackFeel() {
-    
+    const dispatch = useDispatch();
     const history = useHistory();
-    const handleNext = () => {
+    let [feeling, setFeeling] = useState(0);
+
+    const handleFeeling = (event) => {
+        event.preventDefault();
+        console.log('in handle feeling', event.target.value);
+        setFeeling(event.target.value);
+    }
+
+    const handleNext = (event) => {
+        event.preventDefault();
+        console.log('submit feeling');     
+        dispatch({type: 'ADD_FEELING', payload: feeling})
         history.push('/2');
     }
 
@@ -13,9 +24,9 @@ function FeedbackFeel() {
         <div>
             <h2>How are you feeling today?</h2>
 
-            <form>
-                <input type='number' placeholder='Feeling?' />
-                <button onClick={handleNext}>NEXT</button>
+            <form onSubmit={(event) => handleNext(event)}>
+                <input type='number' placeholder='Feeling?' onChange={handleFeeling}/>
+                <button type='submit'>NEXT</button>
             </form>
 
         </div>
