@@ -13,7 +13,7 @@ function FeedbackUnderstand() {
         setUnderstanding(event.target.value);
     }
 
-    const handleNext = () => {
+    const handleNext = (event) => {
         event.preventDefault();
         console.log('submit understanding');     
         dispatch({type: 'ADD_UNDERSTANDING', payload: understanding})

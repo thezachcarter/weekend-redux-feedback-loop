@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Link, useHistory  } from 'react-router-dom
 function FeedbackComments() {
     const dispatch = useDispatch();
     const history = useHistory();
-    let [comment, setComment] = useState(0);
+    let [comments, setComments] = useState(0);
 
     const handleComments = (event) => {
         event.preventDefault();
@@ -16,7 +16,7 @@ function FeedbackComments() {
     const handleNext = (event) => {
         event.preventDefault();
         console.log('submit comment');     
-        dispatch({type: 'ADD_COMMENTS', payload: comment})
+        dispatch({type: 'ADD_COMMENTS', payload: comments})
         history.push('/5');
     }
 

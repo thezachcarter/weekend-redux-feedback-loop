@@ -13,7 +13,7 @@ const feedback = {
     support: 0,
     comments: '',
     flagged: false,
-    date: '',
+    date: Date(),
 }
 
 const feedbackReducer = (state = feedback, action) => {
@@ -29,12 +29,9 @@ const feedbackReducer = (state = feedback, action) => {
         case 'ADD_COMMENTS':
             state.comments = action.payload
         default:
-            
+            return state;
     }
-
-    return state;
 }
-
 
 const storeInstance = createStore(
     combineReducers({
