@@ -7,6 +7,12 @@ function FeedbackReview() {
     const feedbackResults = useSelector(state => state.feedbackReducer)
     console.log('feedbackResults from FeedbackReview:', feedbackResults);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        Axios.post()
+    }
+
     return (
         <div>
             <h2>Review Your Feedback</h2>
@@ -18,7 +24,9 @@ function FeedbackReview() {
                 <li>Comments: {feedbackResults.comments}</li>
             </ul>
 
-            <button>SUBMIT</button>
+            <form onSubmit={(event) => handleSubmit}>
+            <button type="submit">SUBMIT</button>
+            </form>
         </div>
     )
 }
