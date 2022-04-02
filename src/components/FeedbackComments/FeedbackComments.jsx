@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { HashRouter as Router, Route, Link, useHistory  } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 function FeedbackComments() {
     const dispatch = useDispatch();
@@ -15,8 +15,8 @@ function FeedbackComments() {
 
     const handleNext = (event) => {
         event.preventDefault();
-        console.log('submit comment');     
-        dispatch({type: 'ADD_COMMENTS', payload: comments})
+        console.log('submit comment');
+        dispatch({ type: 'ADD_COMMENTS', payload: comments })
         history.push('/5');
     }
 
@@ -25,7 +25,7 @@ function FeedbackComments() {
             <h2>Any comments you want to leave?</h2>
 
             <form onSubmit={(event) => handleNext(event)}>
-                <input type='text' placeholder='Comments' onChange={handleComments}/>
+                <input type='text' placeholder='Comments' onChange={handleComments} />
                 <button>NEXT</button>
             </form>
 

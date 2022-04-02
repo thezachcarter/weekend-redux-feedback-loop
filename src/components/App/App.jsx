@@ -1,14 +1,15 @@
 import React from 'react';
 import Axios from 'axios';
 import './App.css';
-import {useState, useEFfect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import { useState, useEFfect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import FeedbackFeel from '../FeedbackFeel/FeedbackFeel';
 import FeedbackUnderstand from '../FeedbackUnderstand/FeedbackUnderstand';
 import FeedbackSupport from '../FeedbackSupport/FeedbackSupport';
 import FeedbackComments from '../FeedbackComments/FeedbackComments';
-import FeedbackReview from '../FeedbackReview/FeedbackReview'
+import FeedbackReview from '../FeedbackReview/FeedbackReview';
+import FeedbackThanks from '../FeedbackThanks/FeedbackThanks';
 
 function App() {
 
@@ -21,24 +22,28 @@ function App() {
 
       <Router>
 
-        <Route exact path ='/'>      
+        <Route exact path='/'>
           <FeedbackFeel />
         </Route>
-  
-        <Route path ='/2'>
+
+        <Route path='/2'>
           <FeedbackUnderstand />
         </Route>
 
-        <Route path ='/3'>
+        <Route path='/3'>
           <FeedbackSupport />
         </Route>
 
-        <Route path ='/4'>
+        <Route path='/4'>
           <FeedbackComments />
         </Route>
 
-        <Route path ='/5'>
+        <Route path='/5'>
           <FeedbackReview />
+        </Route>
+
+        <Route path='/6'>
+          <FeedbackThanks />
         </Route>
 
       </Router>

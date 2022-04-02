@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { HashRouter as Router, Route, Link, useHistory  } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 function FeedbackSupport() {
     const dispatch = useDispatch();
@@ -15,8 +15,8 @@ function FeedbackSupport() {
 
     const handleNext = (event) => {
         event.preventDefault();
-        console.log('submit support');     
-        dispatch({type: 'ADD_SUPPORT', payload: support})
+        console.log('submit support');
+        dispatch({ type: 'ADD_SUPPORT', payload: support })
         history.push('/4');
     }
 
@@ -25,8 +25,8 @@ function FeedbackSupport() {
             <h2>How well are you being supported?</h2>
 
             <form onSubmit={(event) => handleNext(event)}>
-                <input type='text' placeholder='Support?' onChange={handleSupport}/>
-                <button>NEXT</button>
+                <input type='text' placeholder='Support?' onChange={handleSupport} />
+                <button type="submit">NEXT</button>
             </form>
 
         </div>

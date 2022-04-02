@@ -15,8 +15,8 @@ function FeedbackFeel() {
 
     const handleNext = (event) => {
         event.preventDefault();
-        console.log('submit feeling');     
-        dispatch({type: 'ADD_FEELING', payload: feeling})
+        console.log('submit feeling');
+        dispatch({ type: 'ADD_FEELING', payload: feeling })
         history.push('/2');
     }
 
@@ -25,7 +25,7 @@ function FeedbackFeel() {
             <h2>How are you feeling today?</h2>
 
             <form onSubmit={(event) => handleNext(event)}>
-                <input type='number' placeholder='Feeling?' onChange={handleFeeling}/>
+                <input type='number' placeholder='Feeling?' onChange={handleFeeling} />
                 <button type='submit'>NEXT</button>
             </form>
 

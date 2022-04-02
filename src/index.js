@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker'
-import {Provider} from 'react-redux';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
-const feedback = { 
+const feedback = {
     feeling: 0,
-    understanding: 0, 
+    understanding: 0,
     support: 0,
     comments: '',
     flagged: false,
@@ -18,11 +18,11 @@ const feedback = {
 
 const feedbackReducer = (state = feedback, action) => {
     console.log(state);
-    
+
     switch (action.type) {
         case 'ADD_FEELING':
             state.feeling = action.payload;
-        case 'ADD_UNDERSTANDING' :
+        case 'ADD_UNDERSTANDING':
             state.understanding = action.payload;
         case 'ADD_SUPPORT':
             state.support = action.payload;

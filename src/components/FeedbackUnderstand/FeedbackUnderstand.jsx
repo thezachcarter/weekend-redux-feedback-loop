@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { HashRouter as Router, Route, Link, useHistory  } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
 function FeedbackUnderstand() {
     const dispatch = useDispatch();
@@ -15,8 +15,8 @@ function FeedbackUnderstand() {
 
     const handleNext = (event) => {
         event.preventDefault();
-        console.log('submit understanding');     
-        dispatch({type: 'ADD_UNDERSTANDING', payload: understanding})
+        console.log('submit understanding');
+        dispatch({ type: 'ADD_UNDERSTANDING', payload: understanding })
         history.push('/3');
     }
 
