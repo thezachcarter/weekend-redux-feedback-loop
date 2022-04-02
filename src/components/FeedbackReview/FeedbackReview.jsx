@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory  } from 'react-router-dom';
 
@@ -10,7 +11,12 @@ function FeedbackReview() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        Axios.post()
+        Axios.post('/', feedbackResults)
+        .then(response => {
+            console.log('feedback reviewed and sent');
+        }).catch(err => {
+            console.log('error in FeedbackReview POST', err);
+        })
     }
 
     return (
@@ -24,7 +30,7 @@ function FeedbackReview() {
                 <li>Comments: {feedbackResults.comments}</li>
             </ul>
 
-            <form onSubmit={(event) => handleSubmit}>
+            <form onSubmit={(event) => handleSubmit(event)}>
             <button type="submit">SUBMIT</button>
             </form>
         </div>
