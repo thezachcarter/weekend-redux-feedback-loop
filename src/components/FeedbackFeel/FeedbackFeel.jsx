@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
+//Material UI
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 function FeedbackFeel() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -14,10 +18,15 @@ function FeedbackFeel() {
     }
 
     const handleNext = (event) => {
-        event.preventDefault();
         console.log('submit feeling');
-        dispatch({ type: 'ADD_FEELING', payload: feeling })
-        history.push('/2');
+        event.preventDefault();
+        if(feeling == 0){
+            alert('Enter a number between 1 and 5')
+        }
+        else{ 
+            dispatch({ type: 'ADD_FEELING', payload: feeling })
+            history.push('/2')
+        }
     }
 
     return (
@@ -28,7 +37,10 @@ function FeedbackFeel() {
                 <input type='number' placeholder='Feeling?' 
                     onChange={handleFeeling} 
                     min='1' max='5'/>
-                <button type='submit'>NEXT</button>
+
+                {feeling == 0 ? <Button type='submit' variant='contained' color='disabled'>NEXT</Button> :
+                <Button type='submit' variant='contained' color='primary'>NEXT</Button>}
+                
             </form>
 
         </div>

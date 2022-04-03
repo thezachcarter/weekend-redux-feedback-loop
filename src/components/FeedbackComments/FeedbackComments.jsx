@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
+//Material UI
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+
 function FeedbackComments() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -26,7 +31,7 @@ function FeedbackComments() {
 
             <form onSubmit={(event) => handleNext(event)}>
                 <input type='text' placeholder='Comments' onChange={handleComments} />
-                <button>NEXT</button>
+                <Button type='submit' variant='contained' color='primary'>NEXT</Button>
             </form>
 
         </div>
