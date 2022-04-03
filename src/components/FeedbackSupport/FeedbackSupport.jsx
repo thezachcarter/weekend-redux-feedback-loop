@@ -25,7 +25,9 @@ function FeedbackSupport() {
             <h2>How well are you being supported?</h2>
 
             <form onSubmit={(event) => handleNext(event)}>
-                <input type='text' placeholder='Support?' onChange={handleSupport} />
+                <input type='text' placeholder='Support?' 
+                    onChange={handleSupport} 
+                    min='1' max='5'/>
                 <button type="submit">NEXT</button>
             </form>
 

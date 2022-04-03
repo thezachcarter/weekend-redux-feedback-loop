@@ -25,7 +25,9 @@ function FeedbackUnderstand() {
             <h2>How well are you understanding the content?</h2>
 
             <form onSubmit={(event) => handleNext(event)}>
-                <input type='number' placeholder='Understand?' onChange={handleUnderstanding} />
+                <input type='number' placeholder='Understand?' 
+                onChange={handleUnderstanding} 
+                min='1' max='5'/>
                 <button>NEXT</button>
             </form>
 
