@@ -34,8 +34,8 @@ function FeedbackSupport() {
     const handleNext = (event) => {
         event.preventDefault();
         console.log('submit support');
-        if(support == 0){
-            alert('Enter a number between 1 and 5')
+        if(support < 1 || support > 5){
+            swal("Invalid Input", "Please, enter a number between 1 and 5", "error");
         }
         else{ 
             dispatch({ type: 'ADD_SUPPORT', payload: support})
@@ -57,7 +57,7 @@ function FeedbackSupport() {
 
                 <TextField
                 id="outlined-number"
-                label="Support?"
+                label="Support? scale of 1-5"
                 type="number"
                 min="1" max="5"
                 variant="outlined"
@@ -65,8 +65,11 @@ function FeedbackSupport() {
                 onChange={handleSupport}
                 />
                     
-                {support == 0 ? <Button type='submit' variant='contained' color='default'>NEXT</Button> :
-                <Button type='submit' variant='contained' color='primary'>NEXT</Button>}
+                {support < 1 || support > 5 ? 
+                <Button type='submit' variant='contained' color='default'>NEXT</Button> :
+                <Button type='submit' variant='contained' color='primary'>NEXT</Button>
+                }
+                
             </form>
 
         </div>

@@ -6,6 +6,7 @@ import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import swal from 'sweetalert';
 
 //MUI
 const useStyles = makeStyles((theme) => ({
@@ -34,8 +35,8 @@ function FeedbackFeel() {
     const handleNext = (event) => {
         console.log('submit feeling');
         event.preventDefault();
-        if(feeling == 0){
-            alert('Enter a number between 1 and 5')
+        if(feeling < 1 || feeling > 5){
+            swal("Invalid Input", "Please, enter a number between 1 and 5", "error");
         }
         else{ 
             dispatch({ type: 'ADD_FEELING', payload: feeling })
@@ -58,7 +59,7 @@ function FeedbackFeel() {
                 
                 <TextField
                 id="outlined-number"
-                label="Feeling?"
+                label="Feeling? scale of 1-5"
                 type="number"
                 min="1" max="5"
                 variant="outlined"
@@ -66,8 +67,10 @@ function FeedbackFeel() {
                 onChange={handleFeeling}
                 />
 
-                {feeling == 0 ? <Button type='submit' variant='contained' color='default'>NEXT</Button> :
-                <Button type='submit' variant='contained' color='primary'>NEXT</Button>}
+                {feeling < 1 || feeling > 5 ? 
+                <Button type='submit' variant='contained' color='default'>NEXT</Button> :
+                <Button type='submit' variant='contained' color='primary'>NEXT</Button>
+                }
                 
             </form>
 

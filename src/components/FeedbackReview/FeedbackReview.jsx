@@ -39,6 +39,10 @@ function FeedbackReview() {
         history.push('/6');
     }
 
+    const handleRestart = () => {
+        history.push('/');
+    }
+
     return (
         <div>
             <h2>Review Your Feedback</h2>
@@ -52,6 +56,9 @@ function FeedbackReview() {
             onSubmit={(event) => handleSubmit(event)}>
                 <Button type='submit' variant='contained' color='primary'>SUBMIT</Button>
             </form>
+
+            <Button onClick={handleRestart} variant='contained' color='secondary'>START OVER</Button>
+
         </div>
     )
 }
