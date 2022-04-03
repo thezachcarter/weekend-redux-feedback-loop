@@ -10,12 +10,12 @@ import TextField from '@material-ui/core/TextField';
 //MUI
 const useStyles = makeStyles((theme) => ({
     root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+        },
     },
-  }));
+}));
 
 function FeedbackSupport() {
     const dispatch = useDispatch();
@@ -34,11 +34,11 @@ function FeedbackSupport() {
     const handleNext = (event) => {
         event.preventDefault();
         console.log('submit support');
-        if(support < 1 || support > 5){
+        if (support < 1 || support > 5) {
             swal("Invalid Input", "Please, enter a number between 1 and 5", "error");
         }
-        else{ 
-            dispatch({ type: 'ADD_SUPPORT', payload: support})
+        else {
+            dispatch({ type: 'ADD_SUPPORT', payload: support })
             history.push('/4')
         }
     }
@@ -48,7 +48,7 @@ function FeedbackSupport() {
             <h2>How well are you being supported?</h2>
 
             <form className={classes.root} noValidate autoComplete="off"
-            onSubmit={(event) => handleNext(event)}>
+                onSubmit={(event) => handleNext(event)}>
 
                 {/* INPUT BEFORE MUI 
                 <input type='number' placeholder='Support?' 
@@ -56,20 +56,20 @@ function FeedbackSupport() {
                     min='1' max='5'/> */}
 
                 <TextField
-                id="outlined-number"
-                label="Support? scale of 1-5"
-                type="number"
-                min="1" max="5"
-                variant="outlined"
-                size="small"
-                onChange={handleSupport}
+                    id="outlined-number"
+                    label="Support? scale of 1-5"
+                    type="number"
+                    min="1" max="5"
+                    variant="outlined"
+                    size="small"
+                    onChange={handleSupport}
                 />
-                    
-                {support < 1 || support > 5 ? 
-                <Button type='submit' variant='contained' color='default'>NEXT</Button> :
-                <Button type='submit' variant='contained' color='primary'>NEXT</Button>
+
+                {support < 1 || support > 5 ?
+                    <Button type='submit' variant='contained' color='default'>NEXT</Button> :
+                    <Button type='submit' variant='contained' color='primary'>NEXT</Button>
                 }
-                
+
             </form>
 
         </div>

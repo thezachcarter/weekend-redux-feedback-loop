@@ -65,11 +65,11 @@ function FeedbackUnderstand() {
                     onChange={handleUnderstanding}
                 />
 
-                {understanding < 1 || understanding > 5 ? 
+                {understanding < 1 || understanding > 5 ?
                     <Button type='submit' variant='contained' color='default'>NEXT</Button> :
                     <Button type='submit' variant='contained' color='primary'>NEXT</Button>
                 }
-                
+
             </form>
 
         </div>
